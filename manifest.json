@@ -1,0 +1,19 @@
+{
+	"manifest_version": 2,
+	"name": "MAL Roles Reorder",
+	"description": "On seiyuu and staff pages, display their roles in anime you're familiar with first",
+	"version": "0.1.0",
+	"content_scripts": [{
+		"matches": [
+			"*://myanimelist.net/people/*"
+		],
+		"js": ["index.user.js"]
+	}],
+	"permissions": [
+		"*://myanimelist.net/*"
+	],
+	"icons": {
+		"48": "assets/icon48.png",
+		"128": "assets/icon128.png"
+	}
+}
