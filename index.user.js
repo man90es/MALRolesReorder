@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        MAL Roles Reorder
 // @icon        https://raw.githubusercontent.com/octoman90/MALRolesReorder/master/assets/icon48.png
-// @version     0.1.0
+// @version     0.2.0
 // @description On seiyuu and staff pages, display their roles in anime you're familiar with first
 // @author      man90 (https://github.com/octoman90)
 // @namespace   https://github.com/octoman90/MALRolesReorder/
@@ -34,8 +34,16 @@
 			border: none !important;
 		}
 
-		.reorder-on-my-list {
+		.reorder-main-role {
 			order: -1;
+		}
+
+		.reorder-on-my-list {
+			order: -2;
+		}
+
+		.reorder-on-my-list.reorder-main-role {
+			order: -3;
 		}
 	`
 	document.head.appendChild(style)
@@ -45,6 +53,10 @@
 		.forEach((entry) => {
 			if (entry.querySelector(".button_edit")) {
 				entry.classList.add("reorder-on-my-list")
+			}
+
+			if (entry.querySelector(".h3_character_name + .spaceit_pad")?.innerText.includes("Main")) {
+				entry.classList.add("reorder-main-role")
 			}
 		})
 })()
