@@ -1,5 +1,8 @@
 # MALRolesReorder
 
+> [!NOTE]
+> The script is archived because its functionality is now included in MAL itself.
+
 MALRolesReorder is a browser extension for MyAnimeList.net that reorders entries on seiyuu and staff pages so that their roles in anime you're familiar with are displayed first.
 
 ## Installation
